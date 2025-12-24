@@ -1,0 +1,27 @@
+{
+  "name": "VisiZork2",
+  "version": "1.0",
+  "description": "An interactive fiction visualizer",
+  "author": "Andrew Plotkin <erkyrath@eblong.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run minify && npm run buildts",
+    "buildts": "npx tsc && npx rollup -c",
+    "minify": "./minify gamedat.js && ./minify lib.js && ./minify glkio.js && ./minify ifvms.js && ./minify gnusto.js && ./minify parchment.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "react": "^18.3",
+    "react-dom": "^18.3"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-replace": "^6.0.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/node": "^22.10.1",
+    "@types/react-dom": "^18.3.1",
+    "rollup": "^4.28.0",
+    "typescript": "^5.7"
+  }
+}
