@@ -13,3 +13,15 @@
 
 # Functions (high memory): $4B72 / 19314
 # Strings (high memory): $11AB2 / 72370
+
+SourceFile 1 zork2.zil
+SourceFile 2 2actions.zil
+SourceFile 3 2dungeon.zil
+SourceFile 4 gclock.zil
+SourceFile 5 gglobals.zil
+SourceFile 6 gmacros.zil
+SourceFile 7 gmain.zil
+SourceFile 8 gparser.zil
+SourceFile 9 gsyntax.zil
+SourceFile 10 gverbs.zil
+SourceFile 11 crufty.zil
