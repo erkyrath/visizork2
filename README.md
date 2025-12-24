@@ -7,7 +7,7 @@ This is a web app that plays Zork 2, and simultaneously displays the code that r
 
 
 ```
-python3 visiterp/pyana/parse.py --game zork2-r48-s840904 -z gamesrc/zork1.zil --obj --dict --txd --gamedat
-python3 visiterp/pyana/parse.py --game zork2-r48-s840904 -z gamesrc/zork1.zil --src
+python3 visiterp/pyana/parse.py --game zork2-r48-s840904 -z gamesrc/zork2.zil --obj --dict --txd --gamedat
+python3 visiterp/pyana/parse.py --game zork2-r48-s840904 -z gamesrc/zork2.zil --src
 python3 visiterp/pyana/comgen.py gamedat/commentary
 ```
