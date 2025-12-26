@@ -305,5 +305,21 @@ MapExtraConn - WELL-TOP DOWN WELL-BOTTOM
 MapExtraConn - MAGNET-ROOM SE TEA-ROOM
 MapExtraConn - MAGNET-ROOM EAST MACHINE-ROOM
 # Cake effects (directions are dummies)
-MapExtraConn - TEA-ROOM D POSTS-ROOM
-MapExtraConn - POSTS-ROOM U TEA-ROOM
+MapExtraConn - TEA-ROOM DOWN POSTS-ROOM
+MapExtraConn - POSTS-ROOM UP TEA-ROOM
+# Cage escape
+MapExtraConn - CAGE-ROOM IN IN-CAGE
+MapExtraConn - IN-CAGE OUT CAGE-ROOM
+# Balloon travel
+MapExtraConn - VOLCANO-BOTTOM UP VAIR-1
+MapExtraConn - VAIR-1 UP VAIR-2
+MapExtraConn - VAIR-2 UP VAIR-3
+MapExtraConn - VAIR-3 UP VAIR-4
+# The flippin' Bank Vault puzzle
+MapExtraConn - DEPOSITORY IN VAULT
+MapExtraConn - DEPOSITORY OUT SMALL-ROOM
+MapExtraConn - DEPOSITORY NE VIEWING-EAST
+MapExtraConn - DEPOSITORY NW VIEWING-WEST
+MapExtraConn - VAULT OUT DEPOSITORY
+# You can't go this way, but we'll add it for the map's sake
+MapExtraConn - SMALL-ROOM OUT DEPOSITORY
