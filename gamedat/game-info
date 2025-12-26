@@ -292,3 +292,18 @@ Object 249 LOCAL-GLOBALS
 Object 250 STREAM
 
 Global 158 C-TABLE  TABLE
+
+# Map connections that don't come directly from room properties.
+# (These are used for the "list rooms in order of closeness to you"
+# display tab.)
+
+MapExtraConn - ZORK3 NORTH CRYPT-ROOM
+# Via the bucket
+MapExtraConn - WELL-BOTTOM UP WELL-TOP
+MapExtraConn - WELL-TOP DOWN WELL-BOTTOM
+# Via MAGNET-ROOM-EXIT
+MapExtraConn - MAGNET-ROOM SE TEA-ROOM
+MapExtraConn - MAGNET-ROOM EAST MACHINE-ROOM
+# Cake effects (directions are dummies)
+MapExtraConn - TEA-ROOM D POSTS-ROOM
+MapExtraConn - POSTS-ROOM U TEA-ROOM
