@@ -323,3 +323,7 @@ MapExtraConn - DEPOSITORY NW VIEWING-WEST
 MapExtraConn - VAULT OUT DEPOSITORY
 # You can't go this way, but we'll add it for the map's sake
 MapExtraConn - SMALL-ROOM OUT DEPOSITORY
+# Returning from death
+MapExtraConn - DEAD-PALANTIR-4 WEST INSIDE-BARROW
+### Palantir room should be listed last, but this requires more graph hacking. Remove this before release.
+MapExtraConn - INSIDE-BARROW IN DEAD-PALANTIR-1
