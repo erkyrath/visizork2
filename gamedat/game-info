@@ -306,7 +306,7 @@ Property 13 LDESC  STR
 Property 14 SIZE  INT
 Property 15 ACTION  RTN
 Property 16 ADJECTIVE  ADJS
-Property 17 DESC  STR
+Property 17 SYNONYM  WORDS
 Property 18 CROSS  DIR
 Property 19 LAND  DIR
 Property 20 OUT  DIR
