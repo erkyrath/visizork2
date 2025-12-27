@@ -291,6 +291,22 @@ Object 248 CHASM
 Object 249 LOCAL-GLOBALS
 Object 250 STREAM
 
+Property 2 STRENGTH  INT
+Property 3 ADVFCN  RTN
+Property 4 CONTFCN  RTN
+Property 5 VTYPE  INT
+Property 6 DESCFCN  RTN
+Property 7 TEXT  STR
+Property 8 VALUE  INT
+Property 9 CAPACITY  INT
+Property 10 FDESC  STR
+Property 11 PSEUDO  WORDRTNS
+Property 12 GLOBAL  OBJS
+Property 13 LDESC  STR
+Property 14 SIZE  INT
+Property 15 ACTION  RTN
+Property 16 ADJECTIVE  ADJS
+Property 17 DESC  STR
 Property 18 CROSS  DIR
 Property 19 LAND  DIR
 Property 20 OUT  DIR
