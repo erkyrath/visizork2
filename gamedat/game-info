@@ -67,12 +67,10 @@ Object 34 NEWSPAPER
 Object 35 PALANTIR-2
 Object 36 KEY
 Object 37 LETTER-OPENER
-### check order
 Object 38 KEYHOLE-2
 Object 39 KEYHOLE-1
 Object 40 PCRACK
 Object 41 PTABLE
-### check order
 Object 42 LID-2
 Object 43 LID-1
 Object 44 GNOME-OF-ZURICH
@@ -209,7 +207,6 @@ Object 174 CRYPT-ANTEROOM
 Object 175 CERBERUS
 Object 176 GLOBAL-CERBERUS
 Object 177 CERBERUS-ROOM
-### check really
 Object 178 DIAMOND-9
 Object 179 DIAMOND-8
 Object 180 DIAMOND-7
