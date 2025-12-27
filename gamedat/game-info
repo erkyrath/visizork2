@@ -291,6 +291,8 @@ Object 248 CHASM
 Object 249 LOCAL-GLOBALS
 Object 250 STREAM
 
+Global 156 C-INTS
+Global 157 C-DEMONS
 Global 158 C-TABLE  TABLE
 
 # Map connections that don't come directly from room properties.
