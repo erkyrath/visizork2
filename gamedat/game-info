@@ -84,7 +84,6 @@ Object 49 BILLS
 Object 50 POSTS
 Object 51 BUCKET
 Object 52 FUSE
-### check order
 Object 53 BOTTOM-ETCHINGS
 Object 54 TOP-ETCHINGS
 Object 55 CANDY
@@ -136,7 +135,6 @@ Object 100 TINY-ROOM
 Object 101 PWINDOW
 Object 102 PDOOR
 Object 103 DREARY-ROOM
-### check the tables
 Object 104 GAZEBO-TABLE
 Object 105 MATCH
 Object 106 OFFICE
