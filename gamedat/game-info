@@ -482,4 +482,5 @@ MapExtraConn - SMALL-ROOM OUT DEPOSITORY
 # Returning from death
 MapExtraConn - DEAD-PALANTIR-4 WEST INSIDE-BARROW
 # You can get to DEAD-PALANTIR-1 from anywhere, but we'll map it last
+# (using the DISTANT special direction)
 MapExtraConn - INSIDE-BARROW DISTANT DEAD-PALANTIR-1
