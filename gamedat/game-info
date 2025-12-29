@@ -348,7 +348,7 @@ Property 31 NORTH  DIR
 Global 0 HERE  OBJ
 Global 1 SCORE
 Global 2 MOVES
-###Global 3 FANTASIES ?
+Global 3 FANTASIES  TABLE
 Global 4 WIZQDESCS  TABLE
 Global 5 WIZQLAST
 Global 6 WAND-ON-LOC  OBJ
@@ -387,7 +387,7 @@ Global 38 DIAMOND-BASE
 Global 39 DIAMOND-MOVES
 Global 40 DIAMOND-COUNT
 Global 41 DIAMOND-SOLVE
-### Global 42 ??? not used?
+Global 42 LAMP-TABLE  TABLE
 Global 43 MATCH-COUNT
 Global 44 PLOOK-FLAG
 Global 45 PUNLOCK-FLAG
@@ -419,19 +419,20 @@ Global 70 BLAB-FLAG
 Global 71 BINF-FLAG  OBJ
 Global 72 BTIE-FLAG
 Global 73 MUNGED-ROOM  OBJ
+Global 74 EIGHT-DIRECTIONS  TABLE
 Global 75 SWORD-GLOW
 # The DUMMY table is defined twice. (The one in 2actions.zil wins. The one in gverbs.zil is compiled at 10795 but no global is set there.)
 Global 76 DUMMY  TABLE
 Global 77 YUKS  TABLE
 Global 78 HELLOS  TABLE
-### Global 79 ??? not used?
+### Global 79 ??? not used? SWIMYUKS, but low by 2
 Global 80 HO-HUM  TABLE
 Global 81 INDENTS  TABLE
 Global 82 FUMBLE-PROB
 Global 83 FUMBLE-NUMBER
 Global 84 LUCKY
 Global 85 DEATHS
-Global 86 DEAD?
+Global 86 DEAD
 Global 87 WON-FLAG
 Global 88 BASE-SCORE
 Global 89 DESC-OBJECT  OBJ
