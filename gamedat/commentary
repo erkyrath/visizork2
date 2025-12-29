@@ -42,10 +42,21 @@ glob:WINNER: `WINNER` is the actor in the current command. (Compare [*glob:PLAYE
 
 glob:HERE: The location of the [*glob:WINNER].
 
+glob:FANTASIES: A table of hallucinations which can result from the `FANTASIZE` spell. Unfortunately, the code that displays `FANTASIES` has been lost, so the spell has no effect! See the [PRINT-CONT|~src:GVERBS-1712] routine.
 
-### ODYSSEUS bug
-### BLAST noncompile
-### FANTASIES missing
-### DUMMY twice, gverbs "omitted"
+src:GVERBS-1712: In earlier versions of Zork 2, there was code here to display [~glob:FANTASIES] if you were under the `FANTASIZE` spell. Unfortunately, when renovating the Zorks in 1984, this code was somehow lost. The `FANTASIZE` spell is now broken.
+
+glob:DUMMY: `DUMMY` gives random responses for silly commands, like `CLOSE DOOR` when the door isn't open.
+	This table is defined in two places in the source, with different contents. See [GVERBS|~src:GVERBS-2133]. The compiler apparently didn’t report this as an error, and the developers didn’t notice.
+
+src:GVERBS-2133: The [~glob:DUMMY] table is defined elsewhere, so this declaration has no effect.
+	I’ve colored it grey, as if it were not compiled, but that’s not strictly correct. This version of the table can be found in memory (address 10795); but nothing refers to it, so its contents are never printed.
+
+src:GVERBS-912: This is clearly intended to be the response to `ODYSSEUS`, but it is never printed. In fact the compiler has discarded the string entirely. The `CYCLOPS` code above, which is only compiled in Zork 1, seems to have confused the rest of the function.
+	(Interesting, the carriage return `CR` *is* printed. So the compiler didn't skip the entire line. See [rtn:BLAST] for a similar incident.)
+
+rtn:BLAST: This provides a custom response in the Dusty Room. Sadly, the `BLAST` routine is never called, so the effort is wasted. (The command `BLAST` is handled by [~rtn:V-BLAST].)
+	The compiler has discarded the string but not the routine, which is an interesting optimization choice.
+
 ### snapshots of ascii art
 
