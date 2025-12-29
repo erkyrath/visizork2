@@ -1,9 +1,26 @@
 # Game commentary source.
 
+# Formatting:
+# [*LINK]: Jump to a new note; also display source if possible. (Default behavior.)
+# [~LINK]: Display source for LINK, but keep this note open.
+# [text|*LINK], [text|~LINK]: Specify link text.
+# [text|https://...] External link.
+
 ABOUT: Welcome to the commentary track!
+
+const:ZORK-NUMBER: The number of the Zorks shall be two.
+	(“Three, sir!”)
+	Yes, but *this* one is Zork 2.
+
+rtn:V-VERSION: Print the title, release, and serial number.
+	This function is shared between all three Zorks, which is why it has code to print all three titles. The passages meant for Zork 1 and 3 were ignored when compiling Zork 2. (Skipped code is shown in grey.)
+
+src:GVERBS-89: The TRS-80 interpreter set a special bit which told the game to change certain behavior for no-doubt-contractual reasons. For Zork 2, it adds the line “Licensed to Tandy Corporation”.
+	For a complete list of “Tandy bit” behavior changes in Infocom games, [see this page|https://ifarchive.org/if-archive/infocom/info/tandy_bits.html].
 
 ### ODYSSEUS bug
 ### BLAST noncompile
 ### FANTASIES missing
 ### DUMMY twice, gverbs "omitted"
+### snapshots of ascii art
 
