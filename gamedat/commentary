@@ -110,6 +110,17 @@ glob:LAMP-TABLE: This table shows the successive stages of the lamp going out. T
 rtn:I-WIZARD: This routine is the [~obj:WIZARD]’s heartbeat. Every four turns (normally), he has a chance of showing up and casting something irritating on you. The Wizard also has a number of other possible reactions, depending on your current situation.
 	Once a spell has been cast on you, this routine acts as the timer for its expiration. Then it goes back to handling the Wizard.
 
+glob:SPELL?: If you are currently the victim of a spell, this says which it is. The values are the constants defined under [~const:SPELLS].
+	(This does not include `FLUORESCE`, which is instead indicated by [glob:ALWAYS-LIT].)
+
+const:SPELLS: The number of spells that the Wizard might randomly afflict you with.
+
+glob:SPELL-NAMES: The printed names of the spells defined under [~const:SPELLS].
+
+glob:SPELL-HINTS: These messages are used when the Wizard casts a spell on you.
+
+glob:SPELL-STOPS: These messages are used when a spell expires.
+
 obj:PALANTIR-1: The game lets you refer to the spheres as `PALANTIRS`, but it doesn’t do so itself. No doubt the specter of Tolkien lawsuits loomed large. (Similarly, you can refer to the [~obj:SWORD] as `ORCRIST` or `GLAMDRING` if you want to be a nerd.)
 
 obj:PALANTIR-2: The game lets you refer to the spheres as `PALANTIRS`, but it doesn’t do so itself. No doubt the specter of Tolkien lawsuits loomed large. (Similarly, you can refer to the [~obj:SWORD] as `ORCRIST` or `GLAMDRING` if you want to be a nerd.)
