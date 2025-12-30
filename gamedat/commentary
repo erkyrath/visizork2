@@ -129,6 +129,46 @@ obj:PALANTIR-3: The game lets you refer to the spheres as `PALANTIRS`, but it do
 
 obj:PALANTIR-4: The game lets you refer to the spheres as `PALANTIRS`, but it doesn’t do so itself. No doubt the specter of Tolkien lawsuits loomed large. (Similarly, you can refer to the [~obj:SWORD] as `ORCRIST` or `GLAMDRING` if you want to be a nerd.)
 
+
+obj:DIAMOND-5: The Map tab shows the rooms as laid out by their direction properties. ([~obj:DIAMOND-2] is `NORTH` of [~obj:DIAMOND-5] and so on.) But the puzzle solution has nothing to do with this layout! See [rtn:DIAMOND-MOTION].
+	Once the maze is solved ([~glob:DIAMOND-SOLVE]), you are no longer confused and movement follows the map as shown.
+
+rtn:DIAMOND-MOTION: Everybody loves a [maze|com-maze-1].
+	This routine handles travel in the Oddly-angled Rooms, and the mechanics of solving it.
+	Let’s follow the logic. [Step 1...|*src:2ACTIONS-2185]
+	
+src:2ACTIONS-2185: This logic only applies if the action is `WALK` and the maze is unsolved ([~glob:DIAMOND-SOLVE]). If the maze is solved, travel follows normal direction.
+	If the maze is still unsolved...
+	...are you in an [even room|src:2ACTIONS-2190] or an [odd room|src:2ACTIONS-2213]?
+
+src:2ACTIONS-2190: If you are in an even room (2/4/6/8)...
+	Have you made the [correct next move|src:2ACTIONS-2191] or a [wrong move|src:2ACTIONS-2210]?
+	The correct next move is defined by [~glob:DIDIRS]). You first move `SE`, then `NE`, then `NW`, then `SW`.
+	Note that it doesn’t at all matter *which* room you’re in. Indeed, if you weren’t playing in the Visible Zorker, you would have no way to tell!
+
+src:2ACTIONS-2191: CORRECT
+	If the move was correct, increment [~glob:DIAMOND-COUNT] and possibly mark the maze solved. Then transport you along the cycle of even rooms: 2→4→8→6→2. (Again, this has nothing to do with the move you just made.)
+	If the move was incorrect, call [rtn:DIAMOND-LOSS].
+	If you are in the center room (5) or one of the other rooms (1/3/7/9), the result of your move is entirely random. (Except that going `UP` from the center always works.) It could say “Can’t go that way”, or call [rtn:DIAMOND-LOSS], or go to a randomly selected even room (2/4/6/8). In the latter case, the [~obj:BAT] will turn up if it hasn’t.
+
+src:2ACTIONS-2210: A wrong move from an even room always calls [rtn:DIAMOND-LOSS].
+
+src:2ACTIONS-2213: If you are in an odd room (1/3/5/7/9)...
+	...did you [go up from the center|src:2ACTIONS-2215]? (The exit stairs.)
+	...or did you [make any other move at all|src:2ACTIONS-2216]?
+
+src:2ACTIONS-2215: Going `UP` from the [center room|~obj:DIAMOND-5] always works. (This is how you return to the [Menhir Room|~obj:MENHIR-ROOM].) Of course, *finding* the center room is tricky! It's only a 20% chance in [rtn:DIAMOND-LOSS].
+
+src:2ACTIONS-2216: OTHER
+
+rtn:DIAMOND-LOSS: This handles some of the false moves in the maze. (Not all of them!)
+	We increment [~glob:DIAMOND-MOVES], which counts up towards the Wizard appearing to taunt you. Then we transport the player to a randomly-selected odd room (1/3/5/7/9).
+	Note that this is the only way to return to the [stairway|obj:DIAMOND-5] if the maze is unsolved, and it’s only a 20% chance. Inconsiderate!
+
+glob:DIAMOND-MOVES: This tracks how many wrong moves you’ve made in the maze. At 20, the Wizard [taunts you|~rtn:DIAMOND-LOSS].
+
+glob:DIAMOND-BASE: This tracks the farthest progress you’ve ever made in the maze. The Wizard uses this as part of his taunt: “You’ll never get past *second* base!”
+
 glob:DUMMY: `DUMMY` gives random responses for silly commands, like `CLOSE DOOR` when the door isn’t open.
 	This table is defined in two places in the source, with different contents. See [GVERBS|~src:GVERBS-2133]. The compiler apparently didn’t report this as an error, and the developers didn’t notice.
 
@@ -136,7 +176,7 @@ src:GVERBS-2133: The [~glob:DUMMY] table is defined elsewhere, so this declarati
 	I’ve colored it grey, as if it were not compiled, but that’s not strictly correct. This version of the table can be found in memory (address 10795); but nothing refers to it, so its contents are never printed.
 
 src:GVERBS-912: This is clearly intended to be the response to `ODYSSEUS`, but it is never printed. In fact the compiler has discarded the string entirely. The `CYCLOPS` code above, which is only compiled in Zork 1, seems to have confused the rest of the function.
-	(Interesting, the carriage return `CR` *is* printed. So the compiler didn’t skip the entire line. See [rtn:BLAST] for a similar incident.)
+	(Interestingly, the carriage return `CR` *is* printed. So the compiler didn’t discard the entire line – only the string. See [rtn:BLAST] for a similar incident.)
 
 rtn:BLAST: This provides a custom response in the Dusty Room. Sadly, the `BLAST` routine is never called, so the effort is wasted. (The command `BLAST` is handled by [~rtn:V-BLAST].)
 	The compiler has discarded the string but not the routine, which is an interesting optimization choice.
