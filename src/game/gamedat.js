@@ -120,6 +120,14 @@ window.gamedat_ids = {};
         else
             gamedat_object_treesort.set(obj.onum, 2);
     }
+
+    gamedat_ids.MAP_DOCSIZE = window.gamedat_mapinfo.docsize;
+    gamedat_ids.MAP_VIEWSIZE = window.gamedat_mapinfo.viewsize;
+    for (let obj of window.gamedat_mapinfo.rooms) {
+        obj.center = { x: obj.x + 0.5*obj.width, y: obj.y + 0.5*obj.height };
+        obj.bottom = { x: obj.x + obj.width, y: obj.y + obj.height };
+        gamedat_roominfo_names.set(obj.name, obj);
+    }
   
 })();
 

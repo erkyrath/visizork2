@@ -12,11 +12,12 @@ import { ObjectPage } from '../visi/objpage';
 import { GlobalState } from '../visi/globstate';
 import { SourceFileList } from '../visi/filelist';
 import { AboutPage } from './about';
+import { gamedat_ids } from './gamedat';
 
 const tab_list = [
     [ 'activity', 'Activity' ],
     [ 'objtree', 'World' ],
-    //[ 'map', 'Map' ],
+    [ 'map', 'Map' ],
     [ 'globals', 'State' ],
     [ 'timers', 'Timers' ],
     [ 'filelist', 'Files' ],
@@ -63,9 +64,9 @@ export function TabbedPane()
     case 'activity':
         tabcontent = <CallActivity />;
         break;
-    //case 'map':
-    //    tabcontent = <GameMap />;
-    //    break;
+    case 'map':
+        tabcontent = <GameMap mobiles={ [] } />;
+        break;
     case 'globals':
         tabcontent = <GlobalState />;
         break;
