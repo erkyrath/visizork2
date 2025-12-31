@@ -18,21 +18,6 @@ export function signed_zvalue(val: number) : number
     return (val < 32768) ? val : (val - 65536);
 }
 
-// Sorry, this map is in a lot of places. Redundantly.
-const sourcefile_key_map: any = {
-    'ZORK2':    'A',
-    '2ACTIONS': 'B',
-    '2DUNGEON': 'C',
-    'GCLOCK':   'D',
-    'GGLOBALS': 'E',
-    'GMACROS':  'F',
-    'GMAIN':    'G',
-    'GPARSER':  'H',
-    'GSYNTAX':  'I',
-    'GVERBS':   'J',
-    'CRUFTY':   'K',
-};
-
 export type SourceLoc = {
     filekey: string;
     line: number;
@@ -53,6 +38,8 @@ export function sourceloc_for_key(filekey: string) : string
     return filekey + ':1:1:1:0';
 }
 
+const sourcefile_capkey_map: SourceFileMap = (window as any).gamedat_sourcefile_capkeymap;
+
 /* Turn a location in "GVERBS-90" form into "J:90:1" form.
    (This format turns up in the commentary system.)
 */
@@ -61,7 +48,7 @@ export function sourceloc_for_srctoken(val: string) : string|undefined
     let pos = val.indexOf('-');
     if (pos < 0)
         return undefined;
-    let filekey = sourcefile_key_map[val.slice(0, pos)];
+    let filekey = sourcefile_capkey_map[val.slice(0, pos)];
     if (!filekey)
         return undefined;
     return filekey+':'+val.slice(pos+1)+':1';
