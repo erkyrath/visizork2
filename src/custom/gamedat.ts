@@ -141,10 +141,6 @@ interface SourceFileMap {
     [key: string]: string;
 }
 
-const sourcefile_capkey_map: SourceFileMap = (window as any).gamedat_sourcefile_capkeymap;
-
-export const gamedat_sourcefile_revkeymap: SourceFileMap = (window as any).gamedat_sourcefile_revkeymap;
-
 // Presentation order
 export const sourcefile_list: [ string, string ][] = [
     ['zork2.zil',    'A'],
@@ -250,6 +246,8 @@ interface CommentaryLineMap {
 
 export const gamedat_ids = (window as any).gamedat_ids;
 
+const sourcefile_capkey_map: SourceFileMap = (window as any).gamedat_sourcefile_capkeymap;
+export const gamedat_sourcefile_revkeymap: SourceFileMap = (window as any).gamedat_sourcefile_revkeymap;
 export const gamedat_property_nums = (window as any).gamedat_property_nums as Map<number, PropertyData>;
 export const gamedat_property_names = (window as any).gamedat_property_names as Map<string, PropertyData>;
 export const gamedat_attribute_nums = (window as any).gamedat_attribute_nums as Map<number, AttributeData>;
