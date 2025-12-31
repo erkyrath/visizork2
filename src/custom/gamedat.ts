@@ -143,19 +143,7 @@ interface SourceFileMap {
 
 const sourcefile_capkey_map: SourceFileMap = (window as any).gamedat_sourcefile_capkeymap;
 
-export const sourcefile_map: SourceFileMap = {
-    A: 'zork2.zil',
-    B: '2actions.zil',
-    C: '2dungeon.zil',
-    D: 'gclock.zil',
-    E: 'gglobals.zil',
-    F: 'gmacros.zil',
-    G: 'gmain.zil',
-    H: 'gparser.zil',
-    I: 'gsyntax.zil',
-    J: 'gverbs.zil',
-    K: 'crufty.zil',
-};
+export const gamedat_sourcefile_revkeymap: SourceFileMap = (window as any).gamedat_sourcefile_revkeymap;
 
 // Presentation order
 export const sourcefile_list: [ string, string ][] = [
