@@ -149,7 +149,7 @@ src:2ACTIONS-2190: If you are in an even room (2/4/6/8)...
 	Note that it doesn’t at all matter *which* even room you’re in. Indeed, if you weren’t playing in the Visible Zorker, you would have no way to tell!
 
 src:2ACTIONS-2191: For a correct move, we increment [~glob:DIAMOND-COUNT]. If that reaches 5 (meaning you’ve made your fourth correct move in a row), we also set [~glob:DIAMOND-SOLVE]. Good job!
-	Regardless, we then transport you along the cycle of even rooms: 2→4→8→6→2. Again, this has nothing to do with the move you just made.
+	Regardless, we then transport you along the cycle of even rooms: 2 → 4 → 8 → 6 → 2. Again, this has nothing to do with the move you just made.
 
 src:2ACTIONS-2210: A wrong move from an even room always calls [rtn:DIAMOND-LOSS].
 
