@@ -159,7 +159,7 @@ src:2ACTIONS-2213: If you are in an odd room (1/3/5/7/9)...
 
 src:2ACTIONS-2215: Going `UP` from the [center room|~obj:DIAMOND-5] always works. (This is how you return to the [Menhir Room|~obj:MENHIR-ROOM].) Of course, *finding* the center room is tricky! It’s only a 20% chance in [rtn:DIAMOND-LOSS].
 
-src:2ACTIONS-2216: Any move in an odd room (aside from `UP` the center stairs) gives a completely random result. Roll a die! (Effectively.)
+src:2ACTIONS-2216: Any move in an odd room (aside from `UP` the center stairs) gives a completely random result. Roll a die! (Notionally.)
 	...[rolled 1 or 2|src:2ACTIONS-2219]?
 	...[rolled 3|src:2ACTIONS-2222]?
 	...[rolled 4, 5, 6|src:2ACTIONS-2226]?
@@ -167,9 +167,10 @@ src:2ACTIONS-2216: Any move in an odd room (aside from `UP` the center stairs) g
 src:2ACTIONS-2219: After any move in an odd room, you have a 33% chance of a “can’t go that way” message.
 
 src:2ACTIONS-2222: After any move in an odd room, you have a 16% chance of [rtn:DIAMOND-LOSS].
-	(Yeah, the code says `PROB 25`. But that’s after the [above 33% chance|~src:2ACTIONS-2216] has failed.)
+	(Yeah, the code says `PROB 25`. But that’s after the [33% chance above|~src:2ACTIONS-2216] has failed.)
 
-src:2ACTIONS-2226: After any move in an odd room, you have a 50% chance of being sent to a random *even* room. If the [~obj:BAT] hasn’t yet turned up, it will turn up now. (But if you leave it alone, it will remain in that even room thereafter.)
+src:2ACTIONS-2226: After any move in an odd room, you have a 50% chance of being sent to a random *even* room.
+	If the [~obj:BAT] hasn’t yet turned up, it will turn up now. (But if you leave the bat alone, it will remain in that even room thereafter.)
 
 rtn:DIAMOND-LOSS: This handles some of the false moves in the maze. (Not all of them!)
 	We increment [~glob:DIAMOND-MOVES], which counts up towards the Wizard appearing to taunt you. Then we transport the player to a randomly-selected odd room (1/3/5/7/9).
