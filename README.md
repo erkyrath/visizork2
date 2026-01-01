@@ -130,19 +130,61 @@ Open-source fonts used in the app.
 - [Lato](https://fonts.google.com/specimen/Lato)
 - [Libre Baskerville](https://fonts.google.com/specimen/Libre+Baskerville)
 
+## Building the Visible Zorker
 
+This repository comes with everything built. You can load [`index.html`](./index.html) and play right from the repo. (Not on Github, though. You'll have to check it out first.)
 
+If you want to modify the project, you'll need to install some stuff.
 
+As you see above, the Visible Zorker has a lot of moving parts. Some are written in Javascript; others are Typescript, which must be compiled to Javascript. The UI is built with the React display library.
 
+To build everything from a standing start:
 
+```
+npm install
+npm run build
+```
 
+This regenerates (almost) everything in the [`js`](./js) directory. Hopefully the result will be identical, or almost identical, to what was already there.
 
+If you're doing dev work, you may want to load [`index-full.html`](./index-full.html) instead of `index.html`. The `index-full.html` version uses the *non*-minified Javascript from the [`visiterp/src`][terpsrc] directory. You can edit JS files and reload `index-full.html` without an `npm run build` step, which makes for a much faster work loop.
 
+If you edit the Typescript files (`*.ts` and `*.tsx`), you *do* have to recompile them, even when playing from `index-full.html`. You'll want the following command:
 
+```
+npm run buildts
+```
+
+This recompiles Typescript but skips the JS minification steps, which saves a lot of time.
+
+If you want to rebuild the game data files, do:
 
 ```
 python3 visiterp/pyana/parse.py --game zork2-r48-s840904 -z gamesrc/zork2.zil --obj --dict --txd --gamedat
 python3 visiterp/pyana/parse.py --game zork2-r48-s840904 -z gamesrc/zork2.zil --src
 python3 visiterp/pyana/comgen.py gamedat/commentary
 ```
+
+There's no reason for you to do this, but I'm documenting it anyway.
+
+## Sources and acknowledgements
+
+The Visible Zorker is built on a seriously customized version of the [Parchment][] Z-machine interpreter by Marnanel Thurman, Atul Varma, and Dannii Willis.
+
+[Parchment]: https://github.com/curiousdannii/parchment
+
+Some of the files in [`gamedat`](./gamedat) were created by Allen Garvin, Ben Rudiak-Gould, and Ethan Dicks. See links above.
+
+The fonts used are Courier Prime, Lato, and Libre Baskerville. The header background is copied from Infocom's [Zork hint maps][zorkmap].
+
+[zorkmap]: https://infodoc.plover.net/maps/zork1.pdf
+
+Zork itself was originally written by Tim Anderson, Marc Blank, Bruce Daniels, and Dave Lebling. The commercial versions are copyright 1981 (etc) by Infocom, then Activision, then renamed to Mediagenic, then Bobby Kotick bought it and renamed it Activision, then Vivendi bought it and merged it with Blizzard, then Microsoft consumed the lot.
+
+Thus, the Zork 2 source code is copyright 2025 by Microsoft. As of November 2025, it is [open source][oz] under the MIT license. Thanks to Microsoft for making this project completely legal!
+
+[oz]: https://opensource.microsoft.com/blog/2025/11/20/preserving-code-that-shaped-generations-zork-i-ii-and-iii-go-open-source
+
+Aside from the above, the Visible Zorker is copyright 2025 by Andrew Plotkin. My work on this project is under the MIT license.
+
 
