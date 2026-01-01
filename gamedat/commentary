@@ -129,6 +129,8 @@ obj:PALANTIR-3: The game lets you refer to the spheres as `PALANTIRS`, but it do
 
 obj:PALANTIR-4: The game lets you refer to the spheres as `PALANTIRS`, but it doesn’t do so itself. No doubt the specter of Tolkien lawsuits loomed large. (Similarly, you can refer to the [~obj:SWORD] as `ORCRIST` or `GLAMDRING` if you want to be a nerd.)
 
+rtn:I-SPHERE: This is the timer routine for dying in the [cage|~obj:IN-CAGE].
+
 
 obj:DIAMOND-5: The Map tab shows the rooms as laid out by their direction properties. ([~obj:DIAMOND-2] is `NORTH` of [~obj:DIAMOND-5] and so on.) But the puzzle solution has nothing to do with this layout! See [rtn:DIAMOND-MOTION].
 	Once the maze is solved ([~glob:DIAMOND-SOLVE]), you are no longer confused and movement follows the map as shown.
@@ -179,6 +181,10 @@ rtn:DIAMOND-LOSS: This handles some of the false moves in the maze. (Not all of 
 glob:DIAMOND-MOVES: This tracks how many wrong moves you’ve made in the maze. At 20, the Wizard [taunts you|~rtn:DIAMOND-LOSS].
 
 glob:DIAMOND-BASE: This tracks the farthest progress you’ve ever made in the maze. The Wizard uses this as part of his taunt: “You’ll never get past *second* base!”
+
+
+obj:FOOTPAD: There is no footpad. (The Thief died in Zork 1, remember?) This object exists so that you can ask `WHAT IS A FOOTPAD` after reading the sign in the [~obj:CAGE-ROOM].
+
 
 FILES-LEGEND: The last file, crufty.zil, is a bit odd. See [this note|src:ZORK2-34].
 
