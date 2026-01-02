@@ -25,15 +25,15 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="true"
-     inkscape:zoom="2"
-     inkscape:cx="53.25"
-     inkscape:cy="174.75"
+     inkscape:zoom="1"
+     inkscape:cx="1788.5"
+     inkscape:cy="716.5"
      inkscape:window-width="1976"
      inkscape:window-height="1103"
      inkscape:window-x="2093"
-     inkscape:window-y="38"
+     inkscape:window-y="30"
      inkscape:window-maximized="0"
-     inkscape:current-layer="mob-robot">
+     inkscape:current-layer="connlayer">
     <inkscape:grid
        id="grid1"
        units="px"
@@ -303,7 +303,7 @@
        sodipodi:nodetypes="cc" />
     <path
        style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke fill markers"
-       d="m 388.93746,232.83336 c 0,-21.16667 10.66082,-31.56291 15.95249,-36.85458"
+       d="m 396.87499,232.83334 c 15.875,-15.875 -10.58334,-18.52083 8.01496,-36.85456"
        id="path118"
        sodipodi:nodetypes="cc" />
     <path
