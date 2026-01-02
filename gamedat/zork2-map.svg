@@ -27,13 +27,13 @@
      showgrid="true"
      inkscape:zoom="1"
      inkscape:cx="1744.5"
-     inkscape:cy="720.5"
+     inkscape:cy="760.5"
      inkscape:window-width="1976"
      inkscape:window-height="1103"
      inkscape:window-x="2093"
      inkscape:window-y="30"
      inkscape:window-maximized="0"
-     inkscape:current-layer="decorlayer">
+     inkscape:current-layer="connlayer">
     <inkscape:grid
        id="grid1"
        units="px"
@@ -642,6 +642,11 @@
        style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke fill markers"
        d="m 253.99997,354.5417 v 13.22917"
        id="path235" />
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke fill markers"
+       d="m 433.91665,238.12501 -35.71875,0"
+       id="path1"
+       sodipodi:nodetypes="cc" />
   </g>
   <g
      inkscape:label="Rooms"
