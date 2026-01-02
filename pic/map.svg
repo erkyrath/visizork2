@@ -44,7 +44,7 @@
       <stop style="stop-color:#151500;stop-opacity:0.76615387;" offset="0.5" id="stop147"/>
       <stop style="stop-color:#ffff00;stop-opacity:0.73538464;" offset="1" id="stop146"/>
     </linearGradient>
-    <marker style="overflow:visible" id="Triangle" refX="0" refY="0" orient="auto-start-reverse" markerWidth="1" markerHeight="1" viewBox="0 0 1 1" preserveAspectRatio="xMidYMid">
+    <marker style="overflow:visible" id="Triangle" refX="0" refY="0" orient="auto-start-reverse" markerWidth="0.75" markerHeight="0.75" viewBox="0 0 1 1" preserveAspectRatio="xMidYMid">
       <path transform="scale(0.5)" style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt" d="M 5.77,0 -2.88,5 V -5 Z" id="path135"/>
     </marker>
     <linearGradient id="linearGradient10">
@@ -164,6 +164,7 @@
     <path style="fill:none;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;paint-order:stroke fill markers" d="m 222.24996,354.5417 v 15.875" id="path234"/>
     <path style="fill:none;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;paint-order:stroke fill markers" d="m 253.99997,354.5417 v 13.22917" id="path235"/>
     <path style="fill:none;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;paint-order:stroke fill markers" d="m 433.91665,238.12501 -35.71875,0" id="path1"/>
+    <path style="fill:none;stroke:#4d4d4d;stroke-width:1.058;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;marker-end:url(#Triangle);paint-order:stroke fill markers" d="m 476.24998,54.239586 0,2.645833" id="path2"/>
   </g>
   <g id="roomlayer" style="display:inline">
     <rect id="r-carousel-room" width="21.166668" height="21.16667" x="346.60425" y="254.00003" ry="7.9374862"/>
