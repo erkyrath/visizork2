@@ -1,4 +1,5 @@
 import { gamedat_routine_names, gamedat_global_names, gamedat_string_map, unpack_address } from './gamedat';
+import { spellconstmap } from './cwidgets';
 import { GnustoEngine } from '../visi/zstate';
 
 export function show_commentary_hook(topic: string, engine: GnustoEngine): string|null
@@ -11,7 +12,20 @@ export function show_commentary_hook(topic: string, engine: GnustoEngine): strin
             return 'TRY-SPELL-TOO-LATE';
         }
     }
-
+    if (topic.startsWith('TRY-SPELL-')) {
+        if (!wizard_timer_active(engine)) {
+            return 'TRY-SPELL-TOO-LATE';
+        }
+        let spell = topic.slice(10);
+        let pos = spellconstmap.indexOf(spell);
+        if (pos <= 0) {
+            console.log('BUG: no such spell:', spell);
+            return 'TRY-SPELL-FAIL';
+        }
+        rig_wizard_spell(pos, engine);
+        return null;
+    }
+    
     return null;
 }
 
@@ -102,7 +116,7 @@ function wizard_timer_active(engine: GnustoEngine): boolean
    you're dead, if you're holding the black sphere, etc. We don't check
    any of that stuff here. The numbers will fall where they may.)
 */
-function force_wizard_spell(spellnum: number, engine: GnustoEngine)
+function rig_wizard_spell(spellnum: number, engine: GnustoEngine)
 {
     // L3458: <PROB 10>: The Wizard appears at all
     engine.rig_vm_random(0x10CDB, 0);

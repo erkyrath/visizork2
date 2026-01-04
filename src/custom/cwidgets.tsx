@@ -57,7 +57,7 @@ export function ObjListSorter({ followKey, setFollowKey } : { followKey:number, 
     );
 }
 
-const spellconstmap: string[] = [
+export const spellconstmap: string[] = [
     '(no spell)',
     'FEEBLE',
     'FUMBLE',
