@@ -6,6 +6,11 @@ export function show_commentary_hook(topic: string, engine: GnustoEngine): strin
     if (topic == 'BATTERIES') {
         refresh_batteries(engine);
     }
+    if (topic == 'TRY-SPELL') {
+        if (!wizard_timer_active(engine)) {
+            return 'TRY-SPELL-TOO-LATE';
+        }
+    }
 
     return null;
 }
@@ -33,7 +38,7 @@ function refresh_batteries(engine: GnustoEngine)
 
     let pos = report.globals[C_INTS.num];
     let countpos = 0;
-    while (pos+6 < report.timertable.length) {
+    while (pos+5 < report.timertable.length) {
         let addr = report.timertable[pos+4] * 0x100 + report.timertable[pos+5];
         if (unpack_address(addr) == I_LANTERN.addr) {
             let ctableaddr = report.globals[C_TABLE.num];
@@ -57,4 +62,57 @@ function refresh_batteries(engine: GnustoEngine)
     
     engine.reset_vm_report();
     window.dispatchEvent(new Event('zmachine-update'));
+}
+
+/* Another hack: determine whether the I-WIZARD timer is running.
+ */
+function wizard_timer_active(engine: GnustoEngine): boolean
+{
+    // This should be the same as the last report we got this turn.
+    let report = engine.get_vm_report();
+
+    // Locate the timer entry for I-WIZARD.
+    let I_WIZARD = gamedat_routine_names.get('I-WIZARD');
+    if (!I_WIZARD)
+        return false;
+
+    let C_INTS = gamedat_global_names.get('C-INTS');
+    if (!C_INTS)
+        return false;
+
+    let pos = report.globals[C_INTS.num];
+    let flag = false;
+    while (pos+5 < report.timertable.length) {
+        let addr = report.timertable[pos+4] * 0x100 + report.timertable[pos+5];
+        if (unpack_address(addr) == I_WIZARD.addr) {
+            if (report.timertable[pos+0] || report.timertable[pos+1])
+                flag = true;
+            break;
+        }
+        pos += 6;
+    }
+
+    return flag;
+}
+
+/* Rig the random number generator so that on the Wizard's next appearance,
+   he casts a given spell on you, if possible.
+
+   (There are several situations in which he *won't* cast a spell: if
+   you're dead, if you're holding the black sphere, etc. We don't check
+   any of that stuff here. The numbers will fall where they may.)
+*/
+function force_wizard_spell(spellnum: number, engine: GnustoEngine)
+{
+    // L3458: <PROB 10>: The Wizard appears at all
+    engine.rig_vm_random(0x10CDB, 0);
+    // L3478: <PROB 20>: The Wizard mutters into his beard and vanishes without casting a spell
+    engine.rig_vm_random(0x10E13, 99);
+    // L3494: <PROB .CAST-PROB>: The Wizard is not put off by your spheres
+    //   (chance of continuing is 80% minus 20% per sphere you hold)
+    engine.rig_vm_random(0x10E9E, 0);
+    // L3496: <RANDOM ,SPELLS>: Select a spell
+    engine.rig_vm_random(0x10EAA, spellnum);
+    // L3501: <PROB 75>: The Wizard casts audibly, rather than whispering
+    engine.rig_vm_random(0x10ED1, 0);
 }
