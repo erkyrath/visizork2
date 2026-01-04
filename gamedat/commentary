@@ -292,4 +292,11 @@ BATTERIES: Your lantern is now refreshed.
 	(Take a look at the “Timers” tab.)
 
 TRY-SPELL: The Wizard has a list of twelve [spells|~glob:SPELL-NAMES] that he casts on you. Select one:
-	"Feeble", "Fumble", "Fear", "Filch", "Freeze", "Fall", "Ferment", "Fierce", "Float", "Fireproof", "Fence", "Fantasize". Or "Fluoresce", which he only casts in [specific circumstances|src:2ACTIONS-3443].
+	“[Feeble|TRY-SPELL-FEEBLE]”, “Fumble”, “Fear”, “Filch”, “Freeze”, “Fall”, “Ferment”, “Fierce”, “Float”, “Fireproof”, “Fence”, “Fantasize”. Or “Fluoresce”, which he only casts in [specific circumstances|src:2ACTIONS-3443].
+
+TRY-SPELL-FEEBLE: The Wizard will cast “Feeble” at the next opportunity.
+
+TRY-SPELL-TOO-LATE: The Wizard no longer casts spells at this stage of the game.
+
+TRY-SPELL-FAIL: Something went wrong with the test.
+
