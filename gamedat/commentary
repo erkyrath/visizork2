@@ -44,8 +44,7 @@ glob:HERE: The location of the [*glob:WINNER].
 
 glob:LIT: Whether the current location has light. Set by calling the [rtn:LIT?] routine.
 
-glob:ALWAYS-LIT: Whether the player is inherently emitting light. The Wizard might cast `FLUORESCE` on you if he finds you in the dark.
-	(The flag is never removed, so the spell is permanent. This will cause you trouble in the Crypt.)
+glob:ALWAYS-LIT: Whether the player is inherently emitting light. The Wizard might cast `FLUORESCE` on you if he [finds you in the dark|src:2ACTIONS-3443].
 
 rtn:LIT?: Determine whether a given location has light. This is true if the room or anything in it has [attr:ONBIT]. It’s also true if the player is [glob:ALWAYS-LIT].
 	This routine is used to set the [glob:LIT] variable. It’s also used to determine visibility in some other situations. For example, if you peer out from inside a sphere, or look through the keyhole, the game checks whether you can see only darkness.
@@ -119,6 +118,10 @@ glob:LAMP-TABLE: This table shows the successive stages of the lamp going out. T
 
 rtn:I-WIZARD: This routine is the [~obj:WIZARD]’s heartbeat. Every four turns (normally), he has a chance of showing up and casting something irritating on you. The Wizard also has a number of other possible reactions, depending on your current situation.
 	Once a spell has been cast on you, this routine acts as the timer for its expiration. Then it goes back to handling the Wizard.
+	(Want to [test the Wizard’s spells|TRY-SPELL]?)
+
+src:2ACTIONS-3443: If you are in the dark, your lamp is busted, and your score is over 200, the Wizard may “helpfully” cast `FLUORESCE` on you. This sets [glob:ALWAYS-LIT].
+	(The flag is never removed, so the spell is permanent. This will cause you trouble in the Crypt.)
 
 src:2ACTIONS-3484: The more spheres you carry, the less likely the Wizard is to cast a spell on you.
 
@@ -288,3 +291,5 @@ COM-MAZE-13: You have reached a dead end. There is a massive vending machine her
 BATTERIES: Your lantern is now refreshed.
 	(Take a look at the “Timers” tab.)
 
+TRY-SPELL: The Wizard has a list of twelve [spells|~glob:SPELL-NAMES] that he casts on you. Select one:
+	"Feeble", "Fumble", "Fear", "Filch", "Freeze", "Fall", "Ferment", "Fierce", "Float", "Fireproof", "Fence", "Fantasize". Or "Fluoresce", which he only casts in [specific circumstances|src:2ACTIONS-3443].
