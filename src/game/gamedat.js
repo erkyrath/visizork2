@@ -19,6 +19,10 @@ window.gamedat_object_treesort = new Map();
 window.gamedat_string_map = new Map();
 window.gamedat_dictword_addrs = new Map();
 window.gamedat_dictword_adjs = new Map();
+window.gamedat_preposition_nums = new Map();
+window.gamedat_grammar_verbnums = new Map();
+window.gamedat_grammar_lines = [];
+window.gamedat_grammar_line_addrs = new Map();
 window.gamedat_routine_addrs = new Map();
 window.gamedat_routine_names = new Map();
 window.gamedat_property_nums = new Map();
@@ -87,6 +91,18 @@ window.gamedat_ids = {};
         gamedat_dictword_addrs.set(gamedat_ids.DICT_START + obj.num * gamedat_ids.DICT_WORD_SIZE, obj);
         if (obj.flags.includes('A'))
             gamedat_dictword_adjs.set(obj.adjnum, obj);
+    }
+
+    for (let obj of window.gamedat_grammar) {
+        gamedat_grammar_verbnums.set(obj.num, obj);
+        for (let ln of obj.lines) {
+            gamedat_grammar_lines.push(ln);
+            gamedat_grammar_line_addrs.set(ln.addr, ln);
+        }
+    }
+
+    for (let obj of window.gamedat_prepositions) {
+        gamedat_preposition_nums.set(obj.num, obj);
     }
     
     for (let obj of window.gamedat_routines) {
