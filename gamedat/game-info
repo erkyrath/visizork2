@@ -487,7 +487,7 @@ Global 136 WINNER  OBJ
 Global 137 P-DIR
 Global 138 P-LEN
 Global 139 P-CCSRC
-Global 140 P-SYNTAX
+Global 140 P-SYNTAX  GLINE
 Global 141 P-ONEOBJ  WORD
 Global 142 P-TABLE
 ### PRSO is a property when PRSA is WALK. Tweak?
@@ -523,14 +523,18 @@ Global 169 VERBS  table created from SYNTAX
 # Argument type info for routines that are hard to guess.
 
 RoutineType - CLAUSE - - WORD
+RoutineType - DO-WALK PROP
+RoutineType - GWIM - - PREP
 RoutineType - FIND-TARGET OBJ
 RoutineType - HELD? OBJ
 RoutineType - HELLO? OBJ
 RoutineType - JIGS-UP STR -
 RoutineType - OPEN-CLOSE OBJ STR STR
+RoutineType - ORPHAN GLINE GLINE
 RoutineType - P-DOOR STR OBJ OBJ
 RoutineType - PERFORM ACTION PERFORMO PERFORMI
 RoutineType - ROB OBJ OBJ -
+RoutineType - SYNTAX-FOUND GLINE
 RoutineType - WT? WORD - -
 
 # Map connections that don't come directly from room properties.
