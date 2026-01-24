@@ -210,6 +210,33 @@ export type DictWordData = {
     dirnum?: number;
 };
 
+export type PrepositionData = {
+    num: number;
+    text: string;
+    syn?: string[];
+};
+
+export type GrammarVerbData = {
+    num: number;
+    addr: number;
+    words: string[];
+    lines: GrammarLineData[];
+};
+
+export type GrammarLineData = {
+    num: number;
+    addr: number;
+    action: number;
+    clauses: GrammarClauseData[];
+};
+
+export type GrammarClauseData = {
+    count?: number;
+    prep?: number;
+    attr?: string;
+    loc?: string;
+};
+
 export type ActionData = {
     num: number;
     name: string;
@@ -280,6 +307,11 @@ export const gamedat_object_treesort = (window as any).gamedat_object_treesort a
 export const gamedat_string_map = (window as any).gamedat_string_map as Map<number, StringData>;
 export const gamedat_dictword_addrs = (window as any).gamedat_dictword_addrs as Map<number, DictWordData>;
 export const gamedat_dictword_adjs = (window as any).gamedat_dictword_adjs as Map<number, DictWordData>;
+export const gamedat_preposition_nums = (window as any).gamedat_preposition_nums as Map<number, PrepositionData>;
+export const gamedat_grammar_verbnums = (window as any).gamedat_grammar_verbnums as Map<number, GrammarVerbData>;
+export const gamedat_grammar_lines = (window as any).gamedat_grammar_lines as GrammarLineData[];
+export const gamedat_grammar_line_addrs = (window as any).gamedat_grammar_line_addrs as Map<number, GrammarLineData>;
+export const gamedat_grammaractionlines = (window as any).gamedat_grammaractionlines as number[];
 export const gamedat_routine_addrs = (window as any).gamedat_routine_addrs as Map<number, RoutineData>;
 export const gamedat_routine_names = (window as any).gamedat_routine_names as Map<string, RoutineData>;
 export const gamedat_actions = (window as any).gamedat_actions as ActionData[];
