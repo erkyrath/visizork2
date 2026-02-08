@@ -2,9 +2,9 @@ import React from 'react';
 import { useState, useContext, createContext } from 'react';
 
 import { ZObject } from '../visi/zstate';
+import { ObjectData, GlobalData } from '../visi/gametypes';
 import { StackCallCtx } from '../visi/context';
 import { ArgShowObject, ArgShowProperty } from '../visi/actshowers';
-import { ObjectData, GlobalData } from './gamedat';
 import { gamedat_ids, gamedat_distances, gamedat_object_treesort } from './gamedat';
 
 export function contains_label(obj: ObjectData) : string
