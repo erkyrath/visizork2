@@ -1,15 +1,15 @@
 # The Visible Zorker 2: an interactive fiction visualizer
 
 - Designed by Andrew Plotkin <erkyrath@eblong.com>
-- Web site: https://eblong.com/infocom/visi-zork2/
+- Web site: https://eblong.com/infocom/visi/zork2/
 
 This is a web app that plays Zork 2, and simultaneously displays the code that runs Zork 2 under the hood. It allows you to explore the implementation of Zork in the same way that you explore the game world. Call it an exercise in exploratory coding.
 
 To try the Visible Zorker 2, [play it here][visizork]. You can also try [Zork 1][visizork1]. For more about the intent and origins of the project, see my [blog post on the subject][post].
 
 [post]: https://blog.zarfhome.com/2025/01/the-visible-zorker
-[visizork]: https://eblong.com/infocom/visi-zork2/
-[visizork1]: https://eblong.com/infocom/visi-zork1/
+[visizork]: https://eblong.com/infocom/visi/zork2/
+[visizork1]: https://eblong.com/infocom/visi/zork1/
 
 ### What to do
 
@@ -25,14 +25,14 @@ To refer to specific features of Zork from an external web site, use a link like
 
 Deep link formats:
 
-- https://eblong.com/infocom/visi-zork2/#OBJ:GENIE
-- https://eblong.com/infocom/visi-zork2/#RTN:GO
-- https://eblong.com/infocom/visi-zork2/#GLOB:HERE
-- https://eblong.com/infocom/visi-zork2/#CONST:ZORK-NUMBER
+- https://eblong.com/infocom/visi/zork2/#OBJ:GENIE
+- https://eblong.com/infocom/visi/zork2/#RTN:GO
+- https://eblong.com/infocom/visi/zork2/#GLOB:HERE
+- https://eblong.com/infocom/visi/zork2/#CONST:ZORK-NUMBER
 
 You can also specify any source line by filename and line number:
 
-- https://eblong.com/infocom/visi-zork2/#SRC:GVERBS-89
+- https://eblong.com/infocom/visi/zork2/#SRC:GVERBS-89
 
 ## The contents of this repository
 
@@ -107,11 +107,11 @@ git submodule update
 
 Sorry. Submodules are a pain in the ass.
 
-[visiterp]: https://github.com/erkyrath/visiterp
-[terpsrc]: https://github.com/erkyrath/visiterp/tree/master/src
-[terppyana]: https://github.com/erkyrath/visiterp/tree/master/pyana
-[terpfont]: https://github.com/erkyrath/visiterp/tree/master/font
-[terpcss]: https://github.com/erkyrath/visiterp/tree/master/css
+[visiterp]: https://github.com/visible-zorking/visiterp
+[terpsrc]: https://github.com/visible-zorking/visiterp/tree/master/src
+[terppyana]: https://github.com/visible-zorking/visiterp/tree/master/pyana
+[terpfont]: https://github.com/visible-zorking/visiterp/tree/master/font
+[terpcss]: https://github.com/visible-zorking/visiterp/tree/master/css
 
 The `visiterp` repository provides: 
 
