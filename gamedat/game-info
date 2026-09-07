@@ -523,23 +523,24 @@ Global 169 VERBS  table created from SYNTAX
 
 RoutineType - CLAUSE - - WORD
 RoutineType - DO-WALK PROP
-RoutineType - GO-NEXT TABLE
 RoutineType - GWIM - - PREP
 RoutineType - FIND-IN OBJ ATTR
-RoutineType - FIND-TARGET OBJ
 RoutineType - HELD? OBJ
-RoutineType - HELLO? OBJ
-RoutineType - JIGS-UP STR -
 RoutineType - LKP LKPITM TABLE
-RoutineType - OPEN-CLOSE OBJ STR STR
 RoutineType - ORPHAN GLINE GLINE
-RoutineType - P-DOOR STR OBJ OBJ
 RoutineType - PERFORM ACTION PERFORMO PERFORMI
 RoutineType - PICK-ONE TABLE
 RoutineType - RANDOM-ELEMENT TABLE
-RoutineType - ROB OBJ OBJ -
 RoutineType - SYNTAX-FOUND GLINE
 RoutineType - WT? WORD - -
+
+RoutineType - FIND-TARGET OBJ
+RoutineType - GO-NEXT TABLE
+RoutineType - HELLO? OBJ
+RoutineType - JIGS-UP STR -
+RoutineType - OPEN-CLOSE OBJ STR STR
+RoutineType - P-DOOR STR OBJ OBJ
+RoutineType - ROB OBJ OBJ -
 
 # Map connections that don't come directly from room properties.
 # (These are used for the "list rooms in order of closeness to you"
